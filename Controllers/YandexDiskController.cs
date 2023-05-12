@@ -22,4 +22,11 @@ public class YandexDiskController : ControllerBase
         var test = await _client.GetYandexDiskInfo("/", _token);
         return Ok(test.ToString());
     }
+
+    [HttpGet("Images")]
+    public async Task<ActionResult> GetImages()
+    {
+        var images = await _client.GetYandexDiskImages("/image", _token);
+        return Ok(images.ToString());
+    }
 }
